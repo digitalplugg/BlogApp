@@ -12,8 +12,8 @@ public class ArticleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
         Bundle savedInstanceState) {
     	View rootView = inflater.inflate(R.layout.article_view, container, false);
-    	((MainActivity) getActivity()).getXML(rootView);
-        // Inflate the layout for this fragment
+    	((MainActivity) getActivity()).getXML(rootView, R.id.article_listview);
+
         return rootView;
     }
     

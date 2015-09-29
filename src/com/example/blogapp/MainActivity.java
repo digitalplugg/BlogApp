@@ -151,8 +151,8 @@ public class MainActivity extends Activity
         }
     }
 
-	public void getXML(View view) {
-		ListView listView = (ListView) view.findViewById(R.id.article_listview);
+	public void getXML(View view, int id) {
+		ListView listView = (ListView) view.findViewById(id);
 	    List<Article> articles = null;
 	    try {
 	        ParseXML parser = new ParseXML();
