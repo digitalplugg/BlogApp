@@ -14,15 +14,18 @@ public class ParseXML {
 	    private Article article;
 	    private String text;
 	 
-	    public ParseXML() {
+	    public ParseXML() 
+	    {
 	        articles = new ArrayList<Article>();
 	    }
 	 
-	    public List<Article> getarticles() {
+	    public List<Article> getarticles() 
+	    {
 	        return articles;
 	    }
 	 
-	    public List<Article> parse(InputStream is) {
+	    public List<Article> parse(InputStream is) 
+	    {
 	        XmlPullParserFactory factory = null;
 	        XmlPullParser parser = null;
 	        try {
@@ -33,11 +36,14 @@ public class ParseXML {
 	            parser.setInput(is, null);
 	 
 	            int eventType = parser.getEventType();
-	            while (eventType != XmlPullParser.END_DOCUMENT) {
+	            while (eventType != XmlPullParser.END_DOCUMENT) 
+	            {
 	                String tagname = parser.getName();
-	                switch (eventType) {
+	                switch (eventType) 
+	                {
 	                case XmlPullParser.START_TAG:
-	                    if (tagname.equalsIgnoreCase("employee")) {
+	                    if (tagname.equalsIgnoreCase("item")) 
+	                    {
 	                        article = new Article();
 	                    }
 	                    break;
@@ -47,19 +53,17 @@ public class ParseXML {
 	                    break;
 	 
 	                case XmlPullParser.END_TAG:
-	                    if (tagname.equalsIgnoreCase("employee")) {
-	                        // add employee object to list
+	                    if (tagname.equalsIgnoreCase("item")) 
+	                    {
 	                        articles.add(article);
-	                    } else if (tagname.equalsIgnoreCase("name")) {
+	                    }
+	                    else if (tagname.equalsIgnoreCase("name")) 
+	                    {
 	                        article.setName(text);
-	                    } else if (tagname.equalsIgnoreCase("id")) {
-	                        article.setId(Integer.parseInt(text));
-	                    } else if (tagname.equalsIgnoreCase("department")) {
-	                        article.setDepartment(text);
-	                    } else if (tagname.equalsIgnoreCase("email")) {
-	                        article.setEmail(text);
-	                    } else if (tagname.equalsIgnoreCase("type")) {
-	                        article.setType(text);
+	                    } 
+	                    else if (tagname.equalsIgnoreCase("image")) 
+	                    {
+	                        article.setImage(text);
 	                    }
 	                    break;
 	 
@@ -69,9 +73,11 @@ public class ParseXML {
 	                eventType = parser.next();
 	            }
 	 
-	        } catch (XmlPullParserException e) {
+	        } catch (XmlPullParserException e) 
+	        {
 	            e.printStackTrace();
-	        } catch (IOException e) {
+	        } catch (IOException e) 
+	        {
 	            e.printStackTrace();
 	        }
 	 

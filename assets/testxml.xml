@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<employees>
-    <employee>
-        <id>2163</id>
+<list>
+    <item>
         <name>Kumar</name>
-        <department>Development</department>
-        <type>Permanent</type>      
-        <email>kumar@tot.com</email>
-    </employee>
-    <employee>
-        <id>6752</id>
+        <image>utampa.jpg</image>
+    </item>
+    <item>
         <name>Siva</name>
-        <department>DB</department>
-        <type>Contract</type>       
-        <email>siva@tot.com</email>
-    </employee>   
-    <employee>
-        <id>6763</id>
+        <image>utampa.jpg</image>
+    </item>   
+    <item>
         <name>Timmy</name>
-        <department>Testing</department>
-        <type>Permanent</type>      
-        <email>timmy@tot.com</email>
-    </employee>
-</employees> 
+        <image>utampa.jpg</image>
+    </item>
+</list> 

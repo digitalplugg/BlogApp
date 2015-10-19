@@ -9,6 +9,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -157,8 +158,9 @@ public class MainActivity extends Activity
 	    try {
 	        ParseXML parser = new ParseXML();
 	        articles = parser.parse(getAssets().open("testxml.xml"));
-	        ArrayAdapter<Article> adapter = 
-	            new ArrayAdapter<Article>(this, R.layout.list_item, articles);
+
+	        ImageAndTextAdapter adapter = new ImageAndTextAdapter(this,
+	                R.layout.article_list_item, articles);
 	        listView.setAdapter(adapter);
 	    } catch (IOException e) {
 	        e.printStackTrace();
